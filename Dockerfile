@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt-get update \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y ninja-build git gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends ninja-build git gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip curl doxygen \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
