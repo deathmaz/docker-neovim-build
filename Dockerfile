@@ -8,6 +8,7 @@ RUN apt-get update \
 WORKDIR /app
 
 CMD bash -c "rm -rf neovim \
+  && rm -rf /app/dist \
   && git clone --depth 1 https://github.com/neovim/neovim.git \
   && cd neovim \
   && make CMAKE_BUILD_TYPE=Release CMAKE_INSTALL_PREFIX=/app/dist install \
